@@ -1,0 +1,23 @@
+.auth__item {
+  margin: 0;
+  margin-bottom: auto;
+  padding: 0;
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+  border: none;
+  box-sizing: border-box;
+  border-bottom: 1px solid #CCC;
+  width: 100%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: #000;
+  color:#fff;
+}
+
+.auth__item:focus {
+    outline-style: none;
+  }

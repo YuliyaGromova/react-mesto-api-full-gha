@@ -1,0 +1,9 @@
+.header_mobile {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 950px) {
+  .header_mobile {
+    margin-top: 142px;
+  }
+}

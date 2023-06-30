@@ -1,0 +1,12 @@
+.header__info {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    margin-top: -35px;
+}
+
+@media screen and (max-width:950px) {
+    .header__info {
+        display: none;
+    }
+}

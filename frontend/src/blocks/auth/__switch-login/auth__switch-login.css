@@ -1,0 +1,16 @@
+.auth__switch-login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 15px;
+  padding: 0;
+  min-height: 97px;
+}
+
+@media screen and (max-width: 950px) {
+  .auth__switch-login {
+    margin-top: 20px;
+    min-height: 57px;
+  }
+}

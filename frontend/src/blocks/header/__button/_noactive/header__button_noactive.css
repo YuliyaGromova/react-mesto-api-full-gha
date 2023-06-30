@@ -1,0 +1,19 @@
+.header__button_noactive {
+  width: 24px;
+  height: 25px;
+  border-bottom: 3px solid #fff;
+  border-top: 3px solid #fff;
+  background-image: url("../../../../images/line.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 5px 30px 0 0;
+  display: none;
+}
+
+@media screen and (max-width: 950px) {
+    .header__button_noactive {
+      display: block;
+    }
+  }
+  
