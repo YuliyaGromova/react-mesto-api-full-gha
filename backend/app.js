@@ -10,8 +10,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 
 const cookieParser = require('cookie-parser');
-const { requestLogger, errorLogger } = require('./middlewares/logger');
-
 const router = require("./routes");
 const { errorHandler } = require("./middlewares/error");
 
@@ -26,10 +24,8 @@ mongoose
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(requestLogger);
-// app.use(logger);
+
 app.use(router);
-app.use(errorLogger);
 app.use(errors());
 app.use(errorHandler);
 

@@ -1,5 +1,5 @@
 {
-  "name": "frontend",
+  "name": "mesto-react",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -40,5 +40,6 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0"
-  }
+  },
+  "homepage": "https://yuliyagromova.github.io/mesto-react/"
 }
