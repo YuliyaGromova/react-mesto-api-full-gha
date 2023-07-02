@@ -121,7 +121,7 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: "https://gromova.students.nomoreparties.sbs",
+  baseUrl: "https://api.gromova.students.nomoreparties.sbs",
   headers: {
     authorization: `Bearer ${localStorage.getItem('token')}`,
     "Content-Type": "application/json",
