@@ -123,8 +123,8 @@ class Api {
 }
 
 export const api = new Api({
-  // baseUrl: "https://api.gromova.students.nomoreparties.sbs",
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://api.gromova.students.nomoreparties.sbs",
+  // baseUrl: "http://localhost:3000",
   headers: {
     // 'Authorization': `Bearer ${localStorage.getItem('token')}`,
     "Content-Type": "application/json",
