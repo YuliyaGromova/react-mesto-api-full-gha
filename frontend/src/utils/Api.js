@@ -2,7 +2,7 @@ class Api {
   constructor(options) {
     this._baseUrl = options.baseUrl;
     this._headers = options.headers;
-    this._authorization = options.headers.authorization;
+    this._authorization = options.headers.Authorization;
   }
 
   _checkResult(res) {
@@ -16,10 +16,8 @@ class Api {
   // Загрузка информации о пользователе с сервера
   getUserInfo() {
     return fetch(this._baseUrl + `/users/me`, {
+      credentials: 'include',
       method: "GET",
-      headers: {
-        authorization: this._authorization,
-      },
     }).then((res) => {
       return this._checkResult(res);
     });
@@ -28,10 +26,8 @@ class Api {
   // Загрузка карточек с сервера
   getInitialCards() {
     return fetch(this._baseUrl + `/cards`, {
+      credentials: 'include',
       method: "GET",
-      headers: {
-        authorization: this._authorization,
-      },
     }).then((res) => {
       return this._checkResult(res);
     });
@@ -40,6 +36,7 @@ class Api {
   // Редактирование профиля
   editUserInfo(data) {
     return fetch(this._baseUrl + `/users/me`, {
+      credentials: 'include',
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
@@ -54,6 +51,7 @@ class Api {
   // Добавление новой карточки
   addNewCard(data) {
     return fetch(this._baseUrl + `/cards`, {
+      credentials: 'include',
       method: "POST",
       headers: this._headers,
       body: JSON.stringify({
@@ -68,10 +66,11 @@ class Api {
   // Удаление карточки
   deleteCardApi(cardId) {
     return fetch(this._baseUrl + `/cards/${cardId}`, {
+      credentials: 'include',
       method: "DELETE",
-      headers: {
-        authorization: this._authorization,
-      },
+      // headers: {
+      //   'Authorization': this._authorization,
+      // },
     }).then((res) => {
       return this._checkResult(res);
     });
@@ -80,10 +79,11 @@ class Api {
   // Постановка и снятие лайка
   putLike(cardId) {
     return fetch(this._baseUrl + `/cards/${cardId}/likes`, {
+      credentials: 'include',
       method: "PUT",
-      headers: {
-        authorization: this._authorization,
-      },
+      // headers: {
+      //   'Authorization': this._authorization,
+      // },
     }).then((res) => {
       return this._checkResult(res);
     });
@@ -91,10 +91,11 @@ class Api {
 
   takeOfLike(cardId) {
     return fetch(this._baseUrl + `/cards/${cardId}/likes`, {
+      credentials: 'include',
       method: "DELETE",
-      headers: {
-        authorization: this._authorization,
-      },
+      // headers: {
+      //   'Authorization': this._authorization,
+      // },
     }).then((res) => {
       return this._checkResult(res);
     });
@@ -111,6 +112,7 @@ class Api {
   // Обновление аватара пользователя
   editAvatar(data) {
     return fetch(this._baseUrl + `/users/me/avatar`, {
+      credentials: 'include',
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify(data),
@@ -121,10 +123,10 @@ class Api {
 }
 
 export const api = new Api({
-  baseUrl: "https://api.gromova.students.nomoreparties.sbs",
-  // baseUrl: "http://localhost:3000",
+  // baseUrl: "https://api.gromova.students.nomoreparties.sbs",
+  baseUrl: "http://localhost:3000",
   headers: {
-    authorization: `${localStorage.getItem('token')}`,
+    // 'Authorization': `Bearer ${localStorage.getItem('token')}`,
     "Content-Type": "application/json",
   },
 });

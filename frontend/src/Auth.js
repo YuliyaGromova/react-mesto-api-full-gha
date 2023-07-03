@@ -1,5 +1,5 @@
-export const BASE_URL = 'https://api.gromova.students.nomoreparties.sbs';
-// export const BASE_URL = 'http://localhost:3000'
+// export const BASE_URL = 'https://api.gromova.students.nomoreparties.sbs';
+export const BASE_URL = 'http://localhost:3000'
 
 export const register = (password, email) => {
     return fetch(`${BASE_URL}/signup`, {
@@ -20,6 +20,7 @@ export const register = (password, email) => {
 
   export const authorize = (password, email) => {
     return fetch(`${BASE_URL}/signin`, {
+      credentials: 'include',
       method: 'POST',
       headers: {
         'Accept': 'application/json',

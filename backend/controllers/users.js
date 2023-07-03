@@ -119,7 +119,7 @@ const login = (req, res, next) => {
             next(new UnauthorizedError('Не верный логин или пароль'));
           } else {
             const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret');
-            res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7, httpOnly: true });
+            res.cookie('jwt', token, { maxAge: 3600000 * 24 * 7, httpOnly: true, sameSite: true });
             res.send({ token });
           }
         })

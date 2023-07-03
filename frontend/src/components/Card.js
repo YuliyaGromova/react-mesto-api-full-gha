@@ -14,9 +14,10 @@ function Card(props) {
   }
 
   const context= React.useContext(CurrentUserContext);
-  const isOwn = card.owner._id === context._id;
-  const isLiked = card.likes.some(i => i._id === context._id);
-
+  const isOwn = card.owner === context._id;
+  const isLiked = card.likes.some(i => i === context._id);
+  console.log(isOwn);
+  console.log(isLiked);
   return (
     <li className="gallery__card">
       {isOwn && <button className="gallery__delete button" onClick={handleDeleteClick}/>} 
