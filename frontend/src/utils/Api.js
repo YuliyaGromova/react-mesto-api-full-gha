@@ -18,7 +18,7 @@ class Api {
     return fetch(this._baseUrl + `/users/me`, {
       method: "GET",
       headers: {
-        authorization: this._authorization,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
       },
     }).then((res) => {
       return this._checkResult(res);
@@ -30,7 +30,7 @@ class Api {
     return fetch(this._baseUrl + `/cards`, {
       method: "GET",
       headers: {
-        authorization: this._authorization,
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
       },
     }).then((res) => {
       return this._checkResult(res);
@@ -122,6 +122,7 @@ class Api {
 
 export const api = new Api({
   baseUrl: "https://api.gromova.students.nomoreparties.sbs",
+  // baseUrl: "http://localhost:3000",
   headers: {
     authorization: `Bearer ${localStorage.getItem('token')}`,
     "Content-Type": "application/json",
