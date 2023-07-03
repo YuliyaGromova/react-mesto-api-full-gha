@@ -38,11 +38,11 @@ export const register = (password, email) => {
   
   export function getContent(token) {
     return fetch(`${BASE_URL}/users/me`, {
-      method: 'GET',
-      credentials: 'include',    
+      method: 'GET',   
       headers: {
+        'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${token}`
+        'Authorization': `Bearer ${token}`,
       }
     })
     .then(res => res.json())
