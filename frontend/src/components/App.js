@@ -49,6 +49,7 @@ function App() {
         
         setCurrentUser(dataUserInfo);
         setCards(dataCards);
+        setLogin(dataUserInfo.email);
       })
       .catch((err) => {
         //попадаем сюда если один из промисов завершаться ошибкой
