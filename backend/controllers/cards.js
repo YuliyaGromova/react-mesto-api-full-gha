@@ -5,7 +5,6 @@
 const Card = require('../models/card');
 const { NotFoundError } = require('../errors/not-found-err');
 const { ForbiddenError } = require('../errors/forbidden-err');
-const {UnauthorizedError} = require('../errors/unauthorized-err');
 
 const getCards = async (req, res, next) => {
   Card.find({})

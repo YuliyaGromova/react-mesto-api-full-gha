@@ -68,9 +68,6 @@ class Api {
     return fetch(this._baseUrl + `/cards/${cardId}`, {
       credentials: 'include',
       method: "DELETE",
-      // headers: {
-      //   'Authorization': this._authorization,
-      // },
     }).then((res) => {
       return this._checkResult(res);
     });
@@ -81,9 +78,6 @@ class Api {
     return fetch(this._baseUrl + `/cards/${cardId}/likes`, {
       credentials: 'include',
       method: "PUT",
-      // headers: {
-      //   'Authorization': this._authorization,
-      // },
     }).then((res) => {
       return this._checkResult(res);
     });
@@ -93,9 +87,6 @@ class Api {
     return fetch(this._baseUrl + `/cards/${cardId}/likes`, {
       credentials: 'include',
       method: "DELETE",
-      // headers: {
-      //   'Authorization': this._authorization,
-      // },
     }).then((res) => {
       return this._checkResult(res);
     });
@@ -126,7 +117,6 @@ export const api = new Api({
   baseUrl: "https://api.gromova.students.nomoreparties.sbs",
   // baseUrl: "http://localhost:3000",
   headers: {
-    // 'Authorization': `Bearer ${localStorage.getItem('token')}`,
     "Content-Type": "application/json",
   },
 });
