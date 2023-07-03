@@ -7,7 +7,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 158.160.100.100
+IP 158.160.100.100
 
 Frontend https://api.gromova.students.nomoreparties.sbs
 
